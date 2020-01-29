@@ -11,18 +11,15 @@ import UIKit
 //   DNA_strand("CTACC")
 //   DNA_strand("GTAT")
 
-func DNA_strand( _ dna: String) {
-  
-  // Third  - not the most optimised loop & but less to diguest than 2
+func DNA_strand( _ dna: String) -> String {
   let swapTable = [("A", "T"), ("T", "A"), ("C", "G"), ("G", "C")]
   
-  let temp = dna.map { char in
+  return dna.map { char in
     swapTable.map { (key, value) in
       String(char) == key ? value as String : ""
     }.joined()
   }.joined()
   
-  print(temp)
 }
 
 DNA_strand("ATTGC")
